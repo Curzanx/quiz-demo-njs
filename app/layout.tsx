@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import { QuizProvider } from "@/components/context/QuizProvider"
 
 export const metadata: Metadata = {
   title: "Quizzy",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        <QuizProvider>{children}</QuizProvider>
+      </body>
     </html>
   )
 }

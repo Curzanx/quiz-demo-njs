@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import { useQuizManager } from "./context/QuizProvider";
-import ScoreCard from "./ScoreCard";
+import { useQuizManager } from "./context/QuizProvider"
+import ScoreCard from "./ScoreCard"
 
 export default function Scoreboard() {
-  const quizManager = useQuizManager();
+  const quizManager = useQuizManager()
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {quizManager?.leaderboard.map((score, index) => (
         <ScoreCard
           key={index}
@@ -16,5 +16,5 @@ export default function Scoreboard() {
         />
       ))}
     </div>
-  );
+  )
 }
